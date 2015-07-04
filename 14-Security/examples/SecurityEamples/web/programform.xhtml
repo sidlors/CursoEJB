@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Programmatic Login Form</title>
+    </h:head>
+    <h:body>
+        Show a login for if you are not logged in and a logout link if you are.
+    </h:body>
+    <h:panelGroup rendered="#{request.userPrincipal eq null}">
+        <h:form>
+            <h:outputLabel for="uname" value="User Name:"/>
+            <h:inputText id="uname" size="15" value="#{securityBean.userName}"/>
+            <h:outputLabel for="pw" value="Password:"/>
+            <h:inputSecret id="pw" size="15" value="#{securityBean.password}"/>
+            <h:commandButton value="Login" action="#{securityBean.login}"/>
+        </h:form>
+    </h:panelGroup>
+    <h:panelGroup rendered="#{request.userPrincipal ne null}">
+        <h:form>
+            <h:commandLink action="#{securityBean.logout}" value="logout"/>
+        </h:form>
+    </h:panelGroup>
+    <h:link value="Home" outcome="index" />
+</html>
+

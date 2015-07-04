@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:util="http://java.sun.com/jsf/composite/comps">
+    <h:head>
+        <title>Add New Employee</title>
+    </h:head>
+    <h:body>
+        <h:form id="addForm">
+            <h:panelGrid id="add" columns="2">
+                Employee ID: <h:inputText value="#{eBean.id}" />
+                Last Name: <h:inputText value="#{eBean.last}"/>
+                First Name: <h:inputText value="#{eBean.first}"/>
+                Birth Date: <util:calendar id ="birth" model="#{cal}" month="#{bBean.month}" day="#{bBean.day}" year="#{bBean.year}"/>
+                Salary: <h:inputText value="#{eBean.salary}"/>
+            </h:panelGrid>
+            <h:commandButton value="Save" action="#{eBean.addEmployee}" />
+            <h:commandButton value="Cancel" action="index"/><p/>
+            <h:message for="add" style="font-weight: bold; color: red"/>
+        </h:form>
+    </h:body>
+</html>
+

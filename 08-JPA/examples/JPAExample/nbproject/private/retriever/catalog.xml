@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://xmlns.oracle.com/weblogic/jdbc-data-source" uri="www.oracle.com/webfolder/technetwork/weblogic/jdbc-data-source/index.html"/>
+</catalog>

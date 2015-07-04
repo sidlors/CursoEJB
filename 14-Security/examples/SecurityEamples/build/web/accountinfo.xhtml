@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>EL Account Info</title>
+    </h:head>
+    <h:body>
+        <h:panelGrid columns="2" border="0" cellpadding="5">
+            <f:facet name="header">Account information with EL</f:facet>
+            \#{request.userPrincipal ne null}
+            <h:outputText value='#{request.userPrincipal ne null}'/>
+            \#{request.userPrincipal.name}
+            <h:outputText value='#{request.userPrincipal.name}'/>
+            \#{request.remoteUser}
+            <h:outputText value='#{request.remoteUser}'/>
+            \#{request.isUserInRole("admin")}
+            <h:outputText value='#{request.isUserInRole("admin")}'/>
+            \#{securityBean.admin}
+            <h:outputText value='#{securityBean.admin}'/>
+            \#{securityBean.principalName}
+            <h:outputText value='#{securityBean.principalName}'/>
+        </h:panelGrid>
+        <h:link value="Home" outcome="index" />
+    </h:body>
+</html>
+

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+        <cc:attribute name="month" displayName="Month value selected - full month name as a String - 'January'"/>
+        <cc:attribute name="day" displayName="Day value selected as an String"/>
+        <cc:attribute name="year" displayName="Year value selected - as an String - between 1900 and current year"/>
+        <cc:attribute name="model" displayName="Bean name that provides the model for this calendar"/>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+
+            Month: 
+            <!-- In JSF 2.2 you will be able to use ajax with bound properties -->
+            <!-- binding="#{cc.attrs.model.monthComp}"  -->
+            <h:selectOneMenu id="month" value="#{cc.attrs.month}" valueChangeListener="#{cc.attrs.model.monthSelected}">
+                <f:selectItems value="#{cc.attrs.model.months}"/>
+                <f:ajax event="change" render="days"/>
+            </h:selectOneMenu>
+            Day: 
+            <!-- binding="#{cc.attrs.model.dayComp}" -->
+            <h:selectOneMenu id="days" value="#{cc.attrs.day}"  >
+                <f:selectItems value="#{cc.attrs.model.days}"/>
+            </h:selectOneMenu>
+            Year: 
+            <h:selectOneMenu id="year" value="#{cc.attrs.year}">
+                <f:selectItems value="#{cc.attrs.model.years}"/>
+            </h:selectOneMenu>
+
+    </cc:implementation>
+</html>

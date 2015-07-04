@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Employee List</title>
+    </h:head>
+    <h:body>
+        Employee Database
+        <h:form>
+            <h:dataTable value="#{eBean.allEmployees}" var="emp"  border="2">
+                <h:column>
+                    <f:facet name="header">Update</f:facet>
+                    <h:link value="Edit" outcome="edit?empId=#{emp.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{emp.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">First Name</f:facet>
+                    #{emp.firstName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Last Name</f:facet>
+                    #{emp.lastName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Birth Date</f:facet>
+                    #{emp.birthDate}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Salary</f:facet>
+                    #{emp.salary}
+                </h:column>
+                <h:column>
+                    <h:commandLink value="Delete" action="#{eBean.deleteEmployee(emp.id)}"/>
+                </h:column>
+            </h:dataTable>
+            <h:commandButton value="Add New" action="add"/>
+        </h:form>
+    </h:body>
+</html>
+

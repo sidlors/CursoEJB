@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:util="http://java.sun.com/jsf/composite/comps">
+    <h:head>
+        <title>Edit Existing Employee</title>
+    </h:head>
+    <h:body>
+        <f:metadata>
+            <f:viewParam name="empId" value="#{eBean.id}"/> 
+        </f:metadata>
+        <h:form>
+            <h:panelGrid id ="edit" columns="2">
+                Employee ID: <h:outputText value="#{eBean.id}"/>
+                Last Name: <h:inputText value="#{eBean.last}"/>
+                First Name: <h:inputText value="#{eBean.first}"/>
+                Birth Date: <util:calendar id ="birth" model="#{cal}" month="#{bBean.month}" day="#{bBean.day}" year="#{bBean.year}"/>
+                Salary: <h:inputText value="#{eBean.salary}"/>
+            </h:panelGrid>
+            <h:commandButton value="Update" action="#{eBean.updateEmployee}"/>
+            <h:commandButton value="Cancel" action="index"/><p/>
+            <h:message for="edit" style="font-weight: bold; color: red"/>
+        </h:form>
+    </h:body>
+</html>
+

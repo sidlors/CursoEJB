@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd" version="6">
+  <display-name>jee-ear</display-name>
+  <module>
+    <ejb>jee-ejb-1.0-SNAPSHOT.jar</ejb>
+  </module>
+  <module>
+    <web>
+      <web-uri>jee-war-1.0-SNAPSHOT.war</web-uri>
+      <context-root>boveda-personal-ws</context-root>
+    </web>
+  </module>
+  <library-directory>APP-INF/lib</library-directory>
+</application>
