@@ -1,3 +1,9 @@
+
+
+CREATE DATABASE certificatic;
+\c certificatic 
+
+
 -- Create schemas
 
 -- Create tables
