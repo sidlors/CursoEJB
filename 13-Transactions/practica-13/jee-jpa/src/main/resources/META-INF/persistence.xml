@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="jee-jpa"  transaction-type="RESOURCE_LOCAL">
+	 <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source> java:app/jdbc/certificatic</jta-data-source>
+		<class>mx.certificatic.practica.model.Alumno</class>
+		<class>mx.certificatic.practica.model.Curso</class>
+		<class>mx.certificatic.practica.model.Grupo</class>
+		<class>mx.certificatic.practica.model.Horario</class>
+		<class>mx.certificatic.practica.model.Instructor</class>
+		<properties>
+			<property name="hibernate.connection.username" value="postgres"/>
+			<property name="hibernate.connection.password" value="Semeolvid0"/>
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/certificatic"/>
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Ingres9Dialect"/>
+		</properties>
+	</persistence-unit>
+</persistence>
