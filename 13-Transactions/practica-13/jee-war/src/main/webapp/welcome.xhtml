@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>JSF Hibernate CRUD Example</title>
+        <style>
+            tfoot{
+                text-align: center;
+            }
+            thead{
+                background-color: magenta;
+                color: white;
+            }
+            td{
+                font-weight: bold;
+            }
+            .msg{
+                font-size: small;
+                color: blue;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid id="panel1" columns="2" border="1"
+                         cellpadding="5" cellspacing="1">
+                <f:facet name="header">
+                    <h:outputText value="agregar informacion del alumno "/>
+                </f:facet>
+
+                <h:outputLabel value="Apellido Paterno:"/>
+                <h:inputText value="#{alumnoVO.apellidoPaterno}" />
+
+                <h:outputLabel value="Apellido Materno:"/>
+                <h:inputText value="#{alumnoVO.apellidoMaterno}" />
+
+                <h:outputLabel value="Nombres:"/>
+                <h:inputText value="#{alumnoVO.nombre}"/>
+                <f:facet name="footer">
+
+                    <h:commandButton value="Save" action="#{alumnoVO.altaAlumno}">
+                        <!--f:ajax render="" execute="@form"/-->
+                    </h:commandButton>
+                </f:facet>
+            </h:panelGrid>
+
+        </h:form>
+
+        <!--h:form>
+                <h:panelGrid id="panel2" columns="2" border="1"
+                             cellpadding="5" cellspacing="1">
+                    <f:facet name="header">
+                        <h:outputText value="Update/Delete Customer Info"/>
+                    </f:facet>
+                    <h:outputLabel value="Select Customer:"/>
+                    <h:selectOneMenu value="#{customer.selectedname}" id="ulist">
+                        <f:selectItems value="#{customer.allCustomers}"/>
+                        <f:ajax event="change" render="cid fname lname email sd" listener="#{customer.fullInfo}"/>
+                    </h:selectOneMenu>
+                      <h:outputLabel value="Customer ID:"/>
+                      <h:inputText value="#{customer.custId}" id="cid" readonly="true"/>
+                    <h:outputLabel value="First Name:"/>
+                    <h:inputText value="#{customer.firstName}" id="fname"/>
+                    <h:outputLabel value="Last Name:"/>
+                    <h:inputText value="#{customer.lastName}" id="lname"/>
+                    <h:outputLabel value="Email:"/>
+                    <h:inputText value="#{customer.email}" id="email"/>
+                    <h:outputLabel value="Date of Birth:"/>
+                    <h:inputText value="#{customer.sd}" id="sd"/> 
+                    <f:facet name="footer">
+                        <h:outputLabel value="#{customer.msg}" id="msg2" styleClass="msg"/>
+                        <h:commandButton value="Update Info" action="#{customer.updateCustomer}">
+                            <f:ajax render="ulist cid fname lname email sd msg2" execute="@form"/>
+                        </h:commandButton>
+                        <h:commandButton value="Delete Info" action="#{customer.deleteCustomer}">
+                            <f:ajax render="ulist cid fname lname email sd msg2" execute="@form"/>
+                        </h:commandButton>
+                    </f:facet>
+                </h:panelGrid>
+            </h:form-->
+    </h:body>
+</html>
