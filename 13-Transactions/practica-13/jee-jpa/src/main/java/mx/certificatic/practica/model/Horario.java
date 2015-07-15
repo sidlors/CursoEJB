@@ -27,7 +27,7 @@ public class Horario implements Serializable {
 
 	//bi-directional many-to-one association to Grupo
 	@OneToMany(mappedBy="horario")
-	private List<Grupo> grupos;
+	private List<Grupo> grupo;
 
 	public Horario() {
 	}
@@ -56,23 +56,23 @@ public class Horario implements Serializable {
 		this.termino = termino;
 	}
 
-	public List<Grupo> getGrupos() {
-		return this.grupos;
+	public List<Grupo> getGrupo() {
+		return this.grupo;
 	}
 
-	public void setGrupos(List<Grupo> grupos) {
-		this.grupos = grupos;
+	public void setGrupo(List<Grupo> grupo) {
+		this.grupo = grupo;
 	}
 
 	public Grupo addGrupo(Grupo grupo) {
-		getGrupos().add(grupo);
+		getGrupo().add(grupo);
 		grupo.setHorario(this);
 
 		return grupo;
 	}
 
 	public Grupo removeGrupo(Grupo grupo) {
-		getGrupos().remove(grupo);
+		getGrupo().remove(grupo);
 		grupo.setHorario(null);
 
 		return grupo;

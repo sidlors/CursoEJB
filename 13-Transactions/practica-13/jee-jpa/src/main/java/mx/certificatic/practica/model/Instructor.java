@@ -28,7 +28,7 @@ public class Instructor implements Serializable {
 
 	//bi-directional many-to-one association to Grupo
 	@OneToMany(mappedBy="instructor")
-	private List<Grupo> grupos;
+	private List<Grupo> grupo;
 
 	public Instructor() {
 	}
@@ -65,23 +65,23 @@ public class Instructor implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public List<Grupo> getGrupos() {
-		return this.grupos;
+	public List<Grupo> getGrupo() {
+		return this.grupo;
 	}
 
-	public void setGrupos(List<Grupo> grupos) {
-		this.grupos = grupos;
+	public void setGrupo(List<Grupo> grupo) {
+		this.grupo = grupo;
 	}
 
 	public Grupo addGrupo(Grupo grupo) {
-		getGrupos().add(grupo);
+		getGrupo().add(grupo);
 		grupo.setInstructor(this);
 
 		return grupo;
 	}
 
 	public Grupo removeGrupo(Grupo grupo) {
-		getGrupos().remove(grupo);
+		getGrupo().remove(grupo);
 		grupo.setInstructor(null);
 
 		return grupo;

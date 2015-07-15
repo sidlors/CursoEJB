@@ -23,7 +23,7 @@ public class Grupo implements Serializable {
 
 	//bi-directional many-to-one association to Alumno
 	@OneToMany(mappedBy="grupo")
-	private List<Alumno> alumnos;
+	private List<Alumno> alumno;
 
 	//bi-directional many-to-one association to Curso
 	@ManyToOne(cascade={CascadeType.ALL})
@@ -56,23 +56,23 @@ public class Grupo implements Serializable {
 		this.cursoNombre = cursoNombre;
 	}
 
-	public List<Alumno> getAlumnos() {
-		return this.alumnos;
+	public List<Alumno> getAlumno() {
+		return this.alumno;
 	}
 
-	public void setAlumnos(List<Alumno> alumnos) {
-		this.alumnos = alumnos;
+	public void setAlumno(List<Alumno> alumno) {
+		this.alumno = alumno;
 	}
 
 	public Alumno addAlumno(Alumno alumno) {
-		getAlumnos().add(alumno);
+		getAlumno().add(alumno);
 		alumno.setGrupo(this);
 
 		return alumno;
 	}
 
 	public Alumno removeAlumno(Alumno alumno) {
-		getAlumnos().remove(alumno);
+		getAlumno().remove(alumno);
 		alumno.setGrupo(null);
 
 		return alumno;

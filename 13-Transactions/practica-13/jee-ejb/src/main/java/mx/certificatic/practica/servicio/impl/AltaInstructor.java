@@ -1,4 +1,4 @@
-package mx.certificatic.paractica.servicio;
+package mx.certificatic.practica.servicio.impl;
 
 import javax.ejb.EJB;
 import javax.ejb.Local;
@@ -8,7 +8,7 @@ import javax.ejb.Stateless;
 
 import mx.certificatic.paractica.servicio.api.AltaInstructorLocal;
 import mx.certificatic.paractica.servicio.api.AltaInstructorRemote;
-import mx.certificatic.practica.persistencia.daos.InstructorDAO;
+import mx.certificatic.practica.persistencia.daos.impl.InstructorDAO;
 
 /**
  * Session Bean implementation class AltaInstructor
