@@ -9,7 +9,7 @@
 
 	<artifactId>jee-ear</artifactId>
 	<packaging>ear</packaging>
-	<name>Java Enterprise Application JEE 6</name>
+	<name>Practica7</name>
 
 	<dependencies>
 		<dependency>

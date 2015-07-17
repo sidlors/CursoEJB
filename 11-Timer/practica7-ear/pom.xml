@@ -7,7 +7,7 @@
 	<artifactId>practica7-ear</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Arquetipo de Certificatic</name>
+	<name>Practica7</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,18 +22,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.2</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.14</version>
 		</dependency>
 	</dependencies>
 

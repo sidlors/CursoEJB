@@ -18,11 +18,29 @@
 			<type>ejb</type>
 			<scope>provided</scope>
 		</dependency>
+        <!-- PrimeFaces -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>2.1.7</version>
+        </dependency>
 	</dependencies>
-
+	
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Repo</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
 
 	<build>
-		<finalName>boveda-personal-ws</finalName>
+
 
 		<plugins>
 			<plugin>

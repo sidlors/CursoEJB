@@ -54,7 +54,7 @@ public class TimerEJB{
 	    
 	    public void startTimerSingleAction() {
 	        Timer timer = service.createTimer(60*60*1000, null);
-	        timer.
+	        
 	        System.out.println("Timers set");
 	    }
 	    
