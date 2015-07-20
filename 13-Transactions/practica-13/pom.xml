@@ -73,11 +73,5 @@
 
 
 
-  <modules>
-    <module>jee-ear</module>
-    <module>jee-ejb</module>
-    <module>jee-war</module>
-    <module>jee-ejb-api</module>
-    <module>jee-jpa</module>
-  </modules>
+  <modules></modules>
 </project>
